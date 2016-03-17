@@ -15,5 +15,12 @@
         android:orderInCategory="101"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_cart"
+        android:title="@string/shopping_cart"
+        android:orderInCategory="0"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_cart"/>
+
 
 </menu>

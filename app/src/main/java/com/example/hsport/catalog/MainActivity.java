@@ -1,5 +1,6 @@
 package com.example.hsport.catalog;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -40,30 +41,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 5; i++) {
-            builder.append(getString(R.string.lorem_ipsum) + "\n\n");
-        }
-        TextView tv = (TextView) findViewById(R.id.longText);
-        tv.setText(builder.toString());
-
-        //Initiate the Image..
-        ImageView iv = (ImageView) findViewById(R.id.photo);
-        String imageName = "jacket101";
-
-        // Simple way!
-//        int res = getResources().getIdentifier(imageName, "drawable", getPackageName());
-//        iv.setImageResource(res);
-
-        // Bättre
-        try {
-            InputStream stream = getAssets().open(imageName + ".png");
-            Drawable d = Drawable.createFromStream(stream, null);
-            iv.setImageDrawable(d);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
@@ -73,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         //      groupId, itemId, order, CharSequence);
-        menu.add(0,MENU_ITEM_LOGOUT,102, R.string.logout);
+        menu.add(0, MENU_ITEM_LOGOUT, 102, R.string.logout);
 
         return true;
     }
@@ -89,7 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_about:
-                Snackbar.make(coordinatorLayout, "You selected about", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Snackbar.make(coordinatorLayout, "You selected about", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.action_cart:
+                Snackbar.make(coordinatorLayout, "You selected the shopping cart", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 return true;
 
             case MENU_ITEM_LOGOUT:

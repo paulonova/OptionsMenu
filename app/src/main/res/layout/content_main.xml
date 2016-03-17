@@ -12,33 +12,13 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/logo_side"
-        android:layout_height="@dimen/logo_side"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/logo" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView"
-        android:layout_above="@+id/photo">
-
-        <TextView
-            android:id="@+id/longText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum" />
-
-    </ScrollView>
 
     <ImageView
         android:id="@+id/photo"
         android:layout_width="@dimen/logo_side"
         android:layout_height="@dimen/logo_side"
+        android:src="@drawable/jacket101"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
