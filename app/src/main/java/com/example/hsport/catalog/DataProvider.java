@@ -79,8 +79,7 @@ public final class DataProvider {
                 95);
     }
 
-    private static void addProduct(String itemId, String name,
-                                   String description, double price) {
+    private static void addProduct(String itemId, String name, String description, double price) {
         Product item = new Product(itemId, name, description, price);
         productList.add(item);
         productMap.put(itemId, item);
